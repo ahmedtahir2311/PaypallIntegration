@@ -1,0 +1,59 @@
+{
+  "id": "5WF525094E674783F",
+  "intent": "CAPTURE",
+  "status": "COMPLETED",
+  "purchase_units": [
+    {
+      "reference_id": "default",
+      "amount": { "currency_code": "USD", "value": "2.00" },
+      "payee": {
+        "email_address": "sb-pxbgu3566812@business.example.com",
+        "merchant_id": "X27XWX6PLA432"
+      },
+      "shipping": {
+        "name": { "full_name": "John Doe" },
+        "address": {
+          "address_line_1": "1 Main St",
+          "admin_area_2": "San Jose",
+          "admin_area_1": "CA",
+          "postal_code": "95131",
+          "country_code": "US"
+        }
+      },
+      "payments": {
+        "captures": [
+          {
+            "id": "12K94450J9830535T",
+            "status": "COMPLETED",
+            "amount": { "currency_code": "USD", "value": "2.00" },
+            "final_capture": true,
+            "seller_protection": {
+              "status": "ELIGIBLE",
+              "dispute_categories": [
+                "ITEM_NOT_RECEIVED",
+                "UNAUTHORIZED_TRANSACTION"
+              ]
+            },
+            "create_time": "2022-03-07T11:01:23Z",
+            "update_time": "2022-03-07T11:01:23Z"
+          }
+        ]
+      }
+    }
+  ],
+  "payer": {
+    "name": { "given_name": "John", "surname": "Doe" },
+    "email_address": "sb-haksa14255377@personal.example.com",
+    "payer_id": "5JBCRQ76Y4JJ8",
+    "address": { "country_code": "US" }
+  },
+  "create_time": "2022-03-07T10:59:50Z",
+  "update_time": "2022-03-07T11:01:23Z",
+  "links": [
+    {
+      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/5WF525094E674783F",
+      "rel": "self",
+      "method": "GET"
+    }
+  ]
+}
