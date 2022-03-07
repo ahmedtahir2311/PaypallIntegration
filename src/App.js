@@ -47,14 +47,24 @@ const ButtonWrapper = ({ currency, showSpinner }) => {
               ],
             })
             .then((orderId) => {
-              // Your code here after create the order
+              // Your code here after create the order\
+              console.log("ORDERID ++++", orderId);
+
               return orderId;
             });
         }}
         onApprove={function (data, actions) {
-          return actions.order.capture().then(function () {
+          return actions.order.capture().then(function (details) {
             // Your code here after capture the order
+            console.log("DATA ==============", data);
+            console.log("details ++++++++++", details);
+            const name = details.payer.name.given_name;
+            alert(`Transaction completed by ${name}`);
           });
+        }}
+        onError={(err) => {
+          console.log(err);
+          alert("err");
         }}
       />
     </>
@@ -66,7 +76,8 @@ export default function App() {
     <div style={{ maxWidth: "750px", minHeight: "200px" }}>
       <PayPalScriptProvider
         options={{
-          "client-id": "test",
+          "client-id":
+            "AfFmNb4NsmUpT2BNRJEFKRCznDeWCrMZ7fUR03tq1UlOCR2t9tXIDQalv9fAozbYXSpGUydwmszeynCs",
           components: "buttons",
           currency: "USD",
         }}
